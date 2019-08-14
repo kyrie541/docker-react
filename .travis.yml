@@ -3,8 +3,7 @@ services:
   - docker
 
 before_install:
-  - export USERNAME=kyriehaha
-  - docker build -t USERNAME/docker-react -f Dockerfile.dev .
+  - docker build -t kyriehaha/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true USERNAME/docker-react npm run test
+  - docker run kyriehaha/docker-react npm run test -- --coverage
